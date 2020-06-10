@@ -6,6 +6,7 @@ import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
 import ProfileExperience from './ProfileExperience';
 import ProfileEducation from './ProfileEducation';
+import ProfileGithub from './ProfileGithub';
 import Spinner from '../layout/Spinner';
 import { getProfileById } from '../../actions/profile';
 
@@ -36,6 +37,7 @@ const Profile = ({ getProfileById, profile: { profile, loading}, auth, match }) 
               {profile.education.map(education => (<ProfileEducation key={education._id} education={education} />))}
             </Fragment>) : (<h4>No experience credentials</h4>)}
           </div>
+          {profile.githubusername && (<ProfileGithub username={profile.githubusername} />)}
         </div>
       </Fragment>}
     </Fragment>
