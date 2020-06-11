@@ -177,9 +177,7 @@ router.post('/comment/:id', [auth, [
   try{
     const user = await User.findById(req.user.id).select('-password');
     const post = await Post.findById(req.params.id);
-
-    console.log("This is a post: ",post);
-
+    
     const newComment = {
       text: req.body.text,
       name: user.name,
