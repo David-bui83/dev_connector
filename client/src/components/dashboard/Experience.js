@@ -8,7 +8,7 @@ import { deleteExperience } from '../../actions/profile';
 const Experience = ({ experience, deleteExperience }) => {
 
   const experiences = experience.map(exp => (
-    <tr key={exp.id}>
+    <tr key={exp._id}>
       <td>{exp.company}</td>
       <td className="hide-sm">{exp.title}</td>
       <td>
@@ -42,7 +42,7 @@ const Experience = ({ experience, deleteExperience }) => {
 };
 
 Experience.propTypes = {
-  experince: PropTypes.array.isRequired,
+  experience: PropTypes.array.isRequired,
   deleteExperience: PropTypes.func.isRequired
 };
 
